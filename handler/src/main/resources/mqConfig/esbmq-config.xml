@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EWELL>
+    <MQCONFIG>
+        <QMGR.P90>
+            <!--his dev 192.168.198.138-->
+            <!--his sit 10.13.196.126-->
+            <HOSTNAME>10.13.196.126</HOSTNAME>
+            <QUEUEMANAGER>QMGR.P90_1</QUEUEMANAGER>
+            <PORT>4090</PORT>
+            <CHANNEL>C.P90.C</CHANNEL>
+            <CCSID>1381</CCSID>
+            <CHARSET>1392</CHARSET>
+            <FILEPATH>D:\test</FILEPATH>
+            <QUEUES>
+                <PS10071_0>EQ.S90.PS10071.PUT</PS10071_0>
+                <PS10071_1>EQ.S90.PS10071.GET</PS10071_1>
+                <PS10071_2>EQ.S90.PS10071.COLLECT</PS10071_2>
+            </QUEUES>
+        </QMGR.P90>
+    </MQCONFIG>
+</EWELL>

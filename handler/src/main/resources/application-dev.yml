@@ -1,0 +1,49 @@
+spring:
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 172.10.51.110:8848
+    datasource:
+        driver-class-name: org.h2.Driver
+        schema: classpath:db/schema-h2.sql
+#        data: classpath:db/data-h2.sql
+        url: jdbc:h2:mem:test;MODE=MYSQL
+        username: root
+        password: test
+    h2:
+        console:
+            path: /h2-console #进入h2 web操作界面的路径
+            enabled: true #开启h2 web界面
+    mybatis:
+        mapper-locations: classpath:/mapper/*Mapper.xml
+        type-aliases-package: com.ewell.hk.infrastructure.mapper
+        configuration:
+            log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+management:
+    endpoint:
+        metrics:
+            enable: false
+        prometheus:
+            enable: false
+    endpoints:
+        web:
+            exposure:
+                include: "metrics, prometheus, info, health"
+    trace:
+        http:
+            include: REQUEST_HEADERS, RESPONSE_HEADERS, PRINCIPAL, REMOTE_ADDRESS, TIME_TAKEN
+
+#management:
+#    endpoint:
+#        metrics:
+#            enabled: true
+#        prometheus:
+#            enable: true
+
+#    metrics:
+#        export:
+#            prometheus:
+#                enabled: true
+#management.endpoints.web.exposure.include:*
+#management.endpoints.enabled-by-default=true
+#management.endpoint.metrics.enabled=true
